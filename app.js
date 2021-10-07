@@ -3,6 +3,7 @@ const logger = require('morgan')
 const cors = require('cors')
 const multer = require("multer")
 const path = require("path")
+const {v4} = require("uuid")
 
 const tempDir = path.join(__dirname, "temp")
 console.log(tempDir)
@@ -20,7 +21,7 @@ const uploadConfig = multer.diskStorage({
 })
 
 
-const upload = multer({
+const uploadMiddleWare = multer({
   storage: uploadConfig
 })
 
@@ -30,8 +31,21 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.post("/products", async(req, res) => {
+const avatars = []
+
+app.post("/api/avatars", uploadMiddleWare.single("image"), async(req, res) => {
   console.log(req.body);
+  console.log(req.file)
+  const newAvatar = { ...req.body, id: v4() };
+  avatars.push(newAvatar);
+  res.status(201).json({
+    status: "success",
+    code: 201,
+    data: {
+      result
+    }
+  })
+  
 })
 
 app.listen(3000)
