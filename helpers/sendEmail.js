@@ -9,7 +9,7 @@ const { EMAIL_PASSWORD } = process.env;
     secure: true, 
     auth: {
       user: 'maryna@maryna.com.ua', 
-      pass: EMAIL_PASSWORD
+      pass: /* EMAIL_PASSWORD */ "&Ze5x^k8G#R4"
     },
   }
 

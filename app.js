@@ -5,7 +5,7 @@ const { v4 } = require("uuid")
 const fs = require("fs/promises")
 
 
-/* const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 require("dotenv").config();
 
 const { EMAIL_PASSWORD } = process.env;
@@ -35,7 +35,7 @@ transporter.sendMail(email)
 .catch(error => console.log(error.message))
 
 
- */
+
 
 
 
