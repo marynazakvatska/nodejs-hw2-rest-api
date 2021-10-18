@@ -1,10 +1,50 @@
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
- /* const multer = require("multer")
-const path = require("path") */
 const { v4 } = require("uuid")
 const fs = require("fs/promises")
+
+
+/* const nodemailer = require('nodemailer');
+require("dotenv").config();
+
+const { EMAIL_PASSWORD } = process.env;
+  
+    const nodemailerConfig = {
+    host: "mail.adm.tools" ,
+    port: 465,
+    secure: true, 
+    auth: {
+      user: 'maryna@maryna.com.ua', 
+      pass: EMAIL_PASSWORD
+    },
+  }
+
+const transporter = nodemailer.createTransport(nodemailerConfig);
+
+const email = {
+    to: "maryna.zakvatska@gmail.com",
+    from: "maryna@maryna.com.ua",
+    subject: "Bonjour",
+    html: `<p>Hello world</p>`
+}
+
+
+transporter.sendMail(email)
+    .then(() => console.log("Email success send"))
+.catch(error => console.log(error.message))
+
+
+ */
+
+
+
+
+
+
+
+
+
 
 
 /* const tempDir = path.join(__dirname, "temp")
