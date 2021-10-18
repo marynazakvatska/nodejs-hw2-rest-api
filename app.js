@@ -10,12 +10,12 @@ require("dotenv").config();
 
 const { EMAIL_PASSWORD } = process.env;
   
-    const nodemailerConfig = {
+const nodemailerConfig = {
     host: "mail.adm.tools" ,
     port: 465,
     secure: true, 
     auth: {
-      user: 'maryna@maryna.com.ua', 
+      user: 'info@maryna.com.ua', 
       pass: EMAIL_PASSWORD
     },
   }
@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport(nodemailerConfig);
 
 const email = {
     to: "maryna.zakvatska@gmail.com",
-    from: "maryna@maryna.com.ua",
+    from: "info@maryna.com.ua",
     subject: "Bonjour",
     html: `<p>Hello world</p>`
 }
