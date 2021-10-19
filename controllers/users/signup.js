@@ -26,19 +26,20 @@ const signup = async (req, res) => {
         avatarUrl: gravatar.url(email)
     };
     await User.create(newUser);
-/* await newUser.save() */
+    /* await newUser.save() */
 
-    const data = {
+
+/*     const data = {
         to: email,
         subject: "Подтверждение верификации",
         html: `
         <a href="http://localhost:3000/api/users/verify/${verifyToken}"
         target="_blank">Подтвердить почту</a>
-        `
+        ` 
 }
+*/
 
-
-    await sendEmail(data)
+   /*  await sendEmail(data) */
 res.status(201).json({
     status: "success",
     code: 201,

@@ -48,8 +48,6 @@ transporter.sendMail(email)
 
 
 
-
-
 /* const tempDir = path.join(__dirname, "temp")
 const uploadDir = path.join(__dirname, "public")
 
