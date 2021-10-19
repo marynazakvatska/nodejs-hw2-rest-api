@@ -13,7 +13,10 @@ const { EMAIL_PASSWORD } = process.env;
 const nodemailerConfig = {
     host: "mail.adm.tools" ,
     port: 465,
-    secure: true, 
+  secure: true,
+     tls:{
+        rejectUnauthorized: false
+    },
     auth: {
       user: 'info@maryna.com.ua', 
       pass: EMAIL_PASSWORD
@@ -152,7 +155,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({
     status: "error",
     code: status,
-    // message: "jhhf"
+     message: "error"
   })
 })
 

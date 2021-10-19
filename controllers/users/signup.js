@@ -26,7 +26,7 @@ const signup = async (req, res) => {
         avatarUrl: gravatar.url(email)
     };
     await User.create(newUser);
-
+/* await newUser.save() */
 
     const data = {
         to: email,
