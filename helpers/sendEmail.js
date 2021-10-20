@@ -1,5 +1,6 @@
 
 const nodemailer = require('nodemailer');
+require('dotenv').config()
 const { EMAIL_PASSWORD } = process.env;
 
 const nodemailerConfig = {
@@ -9,6 +10,9 @@ const nodemailerConfig = {
     auth: {
       user: 'info@maryna.com.ua', 
       pass: EMAIL_PASSWORD 
+  },
+    tls:{
+        rejectUnauthorized: false
     },
   }
 
@@ -18,8 +22,13 @@ const sendEmail = async (data) => {
   const email = {
     ...data,
     from: 'info@maryna.com.ua',
+    
   }
-  await transporter.sendEmail(email)
+  await transporter.sendMail(email).then(() => {
+    console.log('Email sent')
+  }).catch((error) => {
+    console.log(error.message)
+  })
 }
 
 module.exports = sendEmail;

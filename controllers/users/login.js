@@ -13,12 +13,12 @@ const url = gravatar.url('emerleite@gmail.com');
 const login = async (req, res) => {
     const { email, password} = req.body;
     const user = await User.findOne({ email }, "_id email password token verify");
-   if (!user /* || !user.verify */ || !bcrypt.compareSync(password, user.password)) {
+   if (!user || !bcrypt.compareSync(password, user.password)) {
 throw new BadRequest("Email or password is wrong,/*  or email is not verufy */")
     }
- /*    if (!user.verify) {
+    if (!user.verify) {
         throw new BadRequest("Email not verify")
-    } */
+    }
    
   const { _id } = user;
     const payload = {
